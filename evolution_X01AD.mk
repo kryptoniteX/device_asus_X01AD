@@ -14,11 +14,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit common RevengeOS stuff.
-$(call inherit-product, vendor/revengeos/config/common.mk)
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 720
 TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
-
+WITH_GAPPS := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+EVO_DONATE_URL := http://paypal.me/jartinup
+EVO_MAINTAINER := Puneet Gautam (jartinup)
+EVO_SUPPORT_URL := https://t.me/PRGProjects
 # Pixel customization
 TARGET_INCLUDE_STOCK_ARCORE := false
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
@@ -28,7 +33,7 @@ $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Device identifiers.
 PRODUCT_DEVICE := X01AD
-PRODUCT_NAME := revengeos_X01AD
+PRODUCT_NAME := evolution_X01AD
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := ASUS Zenfone Max M2
 PRODUCT_MANUFACTURER := asus
